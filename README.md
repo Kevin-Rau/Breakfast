@@ -12,13 +12,16 @@ mongod --config /usr/local/etc/mongod.conf
 In another terminal, where mongo is installed, run command:
 mongo
 
+Then switch to the database breakfast:
+use breakfast
+
 To look at what is in the database:
 db.usercollection.find().pretty()
 
 To add stuff:
 db.usercollection.insert({ "Breakfast food" : "Lima Beans", "Rating" :"0"})
 
-For the Web Server:
+For the Web Server, with mongod running:
 To run, go into the diretory breakfast: 
 npm start
 
