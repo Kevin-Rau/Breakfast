@@ -5,6 +5,23 @@ Catherine dewerd: catdewey
 Kevin Rau: Kevin-Rau
 Ian Moore: Brefew
 
+For the Database:
+In one terminal window, start mongod:
+mongod --config /usr/local/etc/mongod.conf
+
+In another terminal, where mongo is installed, run command:
+mongo
+
+To look at what is in the database:
+db.usercollection.find().pretty()
+
+To add stuff:
+db.usercollection.insert({ "Breakfast food" : "Lima Beans", "Rating" :"0"})
+
+For the Web Server:
+To run, go into the diretory breakfast: 
+npm start
+
 
 
 
