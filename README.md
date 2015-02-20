@@ -22,6 +22,9 @@ For the Web Server:
 To run, go into the diretory breakfast: 
 npm start
 
+go to: http://localhost:3000/userlist
+
+
 
 
 
