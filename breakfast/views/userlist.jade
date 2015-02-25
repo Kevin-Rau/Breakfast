@@ -1,0 +1,18 @@
+//extends layout
+
+//block content
+//    h1= title
+//    form#formAddBreakfast(name="adduser",method="post",action="/adduser")
+//        input#inputBreakfastName(type="text", placeholder="BreakfastName", name="username")
+//        input#inputBreakfastRating(type="text", placeholder="Rating", name="useremail")
+//        button#btnSubmit(type="submit") submit
+
+extends layout
+
+block content
+    h1.
+        Breakfast List
+    ul
+        each user, i in userlist
+            li
+               p  #{user.breakfast} has rating #{user.rating}
