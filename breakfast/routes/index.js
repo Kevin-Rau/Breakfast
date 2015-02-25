@@ -6,12 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* GET Hello World page. */
-router.get('/helloworld', function(req, res) {
-    res.render('helloworld', { title: 'Hello, World!' })
-});
 
-/* GET Userlist page. */
+
+/* GET Userlist (list of all current entries) page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
     var collection = db.get('usercollection');
@@ -21,6 +18,9 @@ router.get('/userlist', function(req, res) {
         });
     });
 });
+
+
+
 
 /* GET New User page. */
 router.get('/newuser', function(req, res) {
@@ -57,6 +57,21 @@ router.post('/adduser', function(req, res) {
         }
     });
 });
+
+
+
+/*GET Update User page used to change ratings*/
+
+/*PUT modify user, used to change ratings */
+
+/*DELETE removes an entry */
+
+
+
+
+
+
+
 
 
 
