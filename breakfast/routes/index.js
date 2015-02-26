@@ -61,6 +61,9 @@ router.post('/adduser', function(req, res) {
 
 
 /*GET Update User page used to change ratings*/
+router.get('/updateuser', function(req, res) {
+    res.render('updateuser', { title: 'Update User' });
+});
 
 /*PUT modify user, used to change ratings */
 
