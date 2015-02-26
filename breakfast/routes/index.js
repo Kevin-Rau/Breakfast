@@ -35,7 +35,7 @@ router.post('/adduser', function(req, res) {
 
     // Get our form values. These rely on the "name" attributes
     var breakFast = req.body.breakfast;
-    var raTings = req.body.ratings;
+    var raTings = req.body.rating;
 
     // Set our collection
     var collection = db.get('usercollection');
@@ -43,7 +43,7 @@ router.post('/adduser', function(req, res) {
     // Submit to the DB
     collection.insert({
         "breakfast" : breakFast,
-        "ratings" : raTings
+        "rating" : raTings
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
@@ -58,14 +58,47 @@ router.post('/adduser', function(req, res) {
     });
 });
 
-
-
-/*GET Update User page used to change ratings*/
-router.get('/updateuser', function(req, res) {
-    res.render('updateuser', { title: 'Update User' });
+/* GET Update User page. */
+router.update('/updateuser', function(req, res) {
+    res.render('updateuser', { title: 'Add New User' });
 });
 
+
 /*PUT modify user, used to change ratings */
+router.update('/updateuser', function(req, res) {
+
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var breakFast = req.body.breakfast;
+    var raTings = req.body.rating;
+
+    // Set our collection
+    var collection = db.get('usercollection');
+
+    // Submit to the DB
+    collection.update({
+        "breakfast" : breakFast},
+        {$set:{"rating": raTing}}
+
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // If it worked, set the header so the address bar doesn't still say /adduser
+            res.location("userlist");
+            // And forward to success page
+            res.redirect("userlist");
+        }
+    });
+
+
+
+
+
 
 /*DELETE removes an entry */
 

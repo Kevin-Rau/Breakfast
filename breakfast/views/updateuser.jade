@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    h1= title
+    h1  Update Breakfast
     form#formUpdateUser(name="updateuser",method="put",action="/updateuser")
-        input#inputUserId(type="text", placeholder="breakfast number", name="id")
+        input#inputUserId(type="text", placeholder="breakfast to update", name="breakfast")
         input#inputUserRating(type="text", placeholder="rating", name="rating")
         button#btnSubmit(type="submit") submit
