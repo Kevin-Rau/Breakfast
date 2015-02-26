@@ -6,6 +6,7 @@ Kevin Rau: Kevin-Rau
 Ian Moore: Brefew
 
 For the Database:
+
 In one terminal window, start mongod:
 mongod --config /usr/local/etc/mongod.conf
 
