@@ -28,7 +28,7 @@ router.get('/newuser', function(req, res) {
 });
 
 /* POST to Add User Service */
-router.post('/adduser', function(req, res) {
+router.post('/aduser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -65,7 +65,7 @@ router.get('/updateuser', function(req, res) {
 
 
 /*PUT modify user, used to change ratings */
-router.put('/putuser', function(req, res) {
+router.put('/uuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -105,7 +105,7 @@ router.get('/removeuser', function(req, res, next) {
 
 
 /*REMOVE removes an entry */
-router.delete('/deleteuser', function(req, res) {
+router.delete('/killuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;

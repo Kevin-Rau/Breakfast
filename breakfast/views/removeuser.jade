@@ -2,6 +2,6 @@ extends layout
 
 block content
     h1  Delete Breakfast
-    form#formUpdateUser(name="deleteuser",method="delete",action="/deleteeuser")
+    form#formRemoveUser(name="killuser",method="delete",action="/removeuser")
         input#inputUserId(type="text", placeholder="breakfast to be deleted", name="breakfast")
         button#btnSubmit(type="submit") submit
