@@ -66,7 +66,7 @@ router.get('/updateuser', function(req, res) {
 
 
 /*PUT modify user, used to change ratings */
-router.post('/modifyuser', function(req, res) {
+router.post('/updateuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -106,7 +106,7 @@ router.get('/removeuser', function(req, res, next) {
 
 
 /*REMOVE removes an entry */
-router.post('/removeuser', function(req, res) {
+router.post('/deleteuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
