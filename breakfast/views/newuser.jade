@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Add New Breakfast:
-    form#formAddUser(name="aduser",method="post",action="/adduser")
+    form#formAddUser(name="adduser",method="post",action="/adduser")
         input#inputUserBreakfast(type="text", placeholder="breakfast", name="breakfast")
         input#inputUserRating(type="text", placeholder="rating", name="rating")
         button#btnSubmit(type="submit") submit

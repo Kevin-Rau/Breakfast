@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1  Update Breakfast
-    form#formUpdateUser(name="uuser",method="put",action="/modifyuser")
+    form#formUpdateUser(name="modifyuser",method="post",action="/modifyuser")
         input#inputUserId(type="text", placeholder="breakfast to update", name="breakfast")
         input#inputUserRating(type="text", placeholder="rating", name="rating")
         button#btnSubmit(type="submit") submit

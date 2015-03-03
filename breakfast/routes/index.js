@@ -28,7 +28,7 @@ router.get('/newuser', function(req, res) {
 });
 
 /* POST to Add User Service */
-router.post('/aduser', function(req, res) {
+router.post('/adduser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -38,8 +38,9 @@ router.post('/aduser', function(req, res) {
     var raTings = req.body.rating;
 
     // Set our collection
+	console.log("Before Post");
     var collection = db.get('usercollection');
-
+	console.log("Im post");
     // Submit to the DB
     collection.insert({
         "breakfast" : breakFast,
@@ -65,7 +66,7 @@ router.get('/updateuser', function(req, res) {
 
 
 /*PUT modify user, used to change ratings */
-router.put('/uuser', function(req, res) {
+router.post('/modifyuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -80,7 +81,7 @@ router.put('/uuser', function(req, res) {
     // Submit to the DB
     collection.update(
         {breakfast : breakFast},
-        {$set:{rating: raTing}
+        {$set:{rating: raTings}
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
@@ -105,7 +106,7 @@ router.get('/removeuser', function(req, res, next) {
 
 
 /*REMOVE removes an entry */
-router.delete('/killuser', function(req, res) {
+router.post('/removeuser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
