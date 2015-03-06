@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
 
 
 /* GET Userlist (list of all current entries) page. */
-router.get('/userlist', function(req, res) {
+router.get('/breakfasts', function(req, res) {
     var db = req.db;
     var collection = db.get('usercollection');
     collection.find({},{},function(e,docs){
-        res.render('userlist', {
-            "userlist" : docs
+        res.render('breakfasts', {
+            "breakfasts" : docs
         });
     });
 });
@@ -23,12 +23,12 @@ router.get('/userlist', function(req, res) {
 
 
 /* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+router.get('/modifyBreakfasts', function(req, res) {
+    res.render('modifyBreakfasts', { title: 'Add, Update, and Remove Breakfasts' });
 });
 
 /* POST to Add User Service */
-router.post('/adduser', function(req, res) {
+router.post('/addFood', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -52,21 +52,21 @@ router.post('/adduser', function(req, res) {
         }
         else {
             // If it worked, set the header so the address bar doesn't still say /adduser
-            res.location("userlist");
+            res.location("breakfasts");
             // And forward to success page
-            res.redirect("userlist");
+            res.redirect("breakfasts");
         }
     });
 });
 
 /* GET Update User page. */
-router.get('/updateuser', function(req, res) {
-    res.render('updateuser', { title: 'Add New User' });
+router.get('/modifyBreakfasts', function(req, res) {
+    res.render('modifyBreakfasts', { title: 'Add New User' });
 });
 
 
 /*PUT modify user, used to change ratings */
-router.post('/updateuser', function(req, res) {
+router.post('/updateFood', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -89,9 +89,9 @@ router.post('/updateuser', function(req, res) {
         }
         else {
             // If it worked, set the header so the address bar doesn't still say /adduser
-            res.location("userlist");
+            res.location("breakfasts");
             // And forward to success page
-            res.redirect("userlist");
+            res.redirect("breakfasts");
         }
     });
 });
@@ -100,13 +100,13 @@ router.post('/updateuser', function(req, res) {
 
 
 /* GET home page. */
-router.get('/removeuser', function(req, res, next) {
-  res.render('removeuser', { title: 'Express' });
+router.get('/modifyBreakfasts', function(req, res, next) {
+  res.render('modifyBreakfasts', { title: 'Express' });
 });
 
 
 /*REMOVE removes an entry */
-router.post('/deleteuser', function(req, res) {
+router.post('/deleteFood', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -128,9 +128,9 @@ router.post('/deleteuser', function(req, res) {
         }
         else {
             // If it worked, set the header so the address bar doesn't still say /adduser
-            res.location("userlist");
+            res.location("breakfasts");
             // And forward to success page
-            res.redirect("userlist");
+            res.redirect("breakfasts");
         }
     });
 });
