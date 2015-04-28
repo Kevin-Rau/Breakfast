@@ -1,6 +1,6 @@
 # Breakfast
 
-##How to set up Breakfast
+##How to serve Breakfast
 - Download the files
 - in your terminal, start mongod --config /path to your mongod.config
 - in a second terminal: npm start
